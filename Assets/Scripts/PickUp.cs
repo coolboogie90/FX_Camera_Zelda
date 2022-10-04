@@ -11,9 +11,8 @@ public class PickUp : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            print("Chest is opened.");
-            Destroy(gameObject);
-            Instantiate(content, transform.position, Quaternion.identity);
+            Destroy(gameObject, 5f);
+            Instantiate(content, transform.position, transform.rotation);
             onPickup?.Invoke();
         }
     }
